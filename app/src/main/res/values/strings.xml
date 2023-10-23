@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CozyStitchApp</string>
+    <string name="profile_label">Profile</string>
+    <string name="shop_list_label">Shop List</string>
+    <string name="search_label">Search</string>
+    <string name="favorites_label">Favorites</string>
+    <string name="new_project_label">New Project</string>
+    <string name="Back_label">Back</string>
+    <string name="sign_upLabel">Sign Up</string>
+    <string name="login_label">I already have an account</string>
+    <string name="separation_line">---------------------------------------------------------</string>
+    <string name="guest_label">Explore as a GUEST!</string>
+    <string name="logo_image">Logo Image</string>
+    <string name="autorization_privacy_label">I want to receive e-mail from Cozy Stitch with offers and updates of the app.</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="password_hint">Password</string>
+    <string name="email_hint">Email</string>
+    <string name="sign_in_label">Sign In</string>
+    <string name="repete_password_label">Repete Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_label">Welcome!</string>
+    <string name="intro_text">Just a few details about you and you will be ready to explore!</string>
+    <string name="level_question">In what level of crochet are you?</string>
+    <string name="email_label">Email</string>
+</resources>

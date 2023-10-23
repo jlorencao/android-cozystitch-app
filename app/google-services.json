@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "517609393302",
+    "project_id": "crochetapp12",
+    "storage_bucket": "crochetapp12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517609393302:android:0568bb5f3f61b278b406b7",
+        "android_client_info": {
+          "package_name": "com.example.cozystitchapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517609393302-j109utfnc868ndtgq4smj1vg9b0evh13.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCokJTYoH9VdyDmvV9ic96czWK-BUUzvMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517609393302-j109utfnc868ndtgq4smj1vg9b0evh13.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
