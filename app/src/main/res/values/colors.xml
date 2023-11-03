@@ -10,6 +10,7 @@
     <color name="background">#FBFCFE</color>
     <color name="cards_and_bars">#F8F9FB</color>
     <color name="icons_cardLabels">#006781</color>
+    <color name="icons_cardLabels_at60">#99006781</color>
     <color name="signButton">#05BAE6</color>
     <color name="sectionTitle">#003544</color>
     <color name="labelSignUp">#003544</color>

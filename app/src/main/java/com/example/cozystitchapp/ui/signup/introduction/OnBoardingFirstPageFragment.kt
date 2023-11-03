@@ -1,11 +1,16 @@
 package com.example.cozystitchapp.ui.signup.introduction
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
+import androidx.fragment.app.viewModels
 import com.example.cozystitchapp.databinding.FragmentOnboardingFirstPageBinding
+import com.example.cozystitchapp.model.Project
+import com.example.cozystitchapp.ui.signup.SignUpViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +25,7 @@ private const val ARG_PARAM2 = "param2"
 class OnBoardingFirstPageFragment : Fragment() {
 
     private lateinit var binding: FragmentOnboardingFirstPageBinding
+    private val viewModel: SignUpViewModel by viewModels()
 
     private var param1: String? = null
     private var param2: String? = null
@@ -39,7 +45,22 @@ class OnBoardingFirstPageFragment : Fragment() {
         binding = FragmentOnboardingFirstPageBinding.inflate(inflater,container,false)
         val view = binding.root
 
+        val nameEditText = binding.nameEditText
+        val lastNameEditText = binding.lastNameEditText
+        val radioGroup = binding.levelRadioGroup
 
+        val saveButton = binding.saveUserDataButton
+        val countryEditText = binding.countryEditText
+
+        saveButton.setOnClickListener {
+            val name = nameEditText.text.toString()
+            val lastName = lastNameEditText.text.toString()
+            val selectedRadioButtonId = radioGroup.checkedRadioButtonId
+            val projects = listOf<Project>()
+            val country = countryEditText.text.toString()
+            val crochetLevel = binding.root.findViewById<RadioButton>(selectedRadioButtonId).text.toString()
+            viewModel.saveUserData(name,lastName,crochetLevel, country, projects)
+        }
 
         // Inflate the layout for this fragment
         return view

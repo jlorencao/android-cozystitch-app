@@ -7,10 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.cozystitchapp.R
 import com.example.cozystitchapp.databinding.FragmentSignUpBinding
+import com.example.cozystitchapp.ui.signup.SignUpViewModel
 import com.example.cozystitchapp.ui.signup.introduction.OnBoardingFirstPageFragment
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -28,8 +29,9 @@ private const val ARG_PARAM2 = "param2"
 class SignUpFragment : Fragment() {
 
 
-    private lateinit var auth: FirebaseAuth;
+    private lateinit var auth: FirebaseAuth
     private lateinit var _binding: FragmentSignUpBinding
+
 
 
     // TODO: Rename and change types of parameters

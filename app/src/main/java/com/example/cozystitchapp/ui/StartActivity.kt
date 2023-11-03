@@ -24,6 +24,7 @@ class StartActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.singInButton.setOnClickListener {
+
             //navigate to login
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

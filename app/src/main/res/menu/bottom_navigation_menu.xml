@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homePageIcon"
+        android:enabled="true"
+        android:icon="@drawable/outline_home_24"
+        android:title="@string/home_icon_label"/>
+
+    <item
+        android:id="@+id/projectsPageIcon"
+        android:enabled="true"
+        android:icon="@drawable/outline_style_24"
+        android:title="@string/projects_label"/>
+
+    <item
+        android:id="@+id/patternCatalogIcon"
+        android:enabled="true"
+        android:icon="@drawable/outline_receipt_24"
+        android:title="@string/patterns_icon_label" />
+
+    <item
+        android:id="@+id/profilePageIcon"
+        android:enabled="true"
+        android:icon="@drawable/outline_person_24"
+        android:title="@string/profile_label"/>
+</menu>
