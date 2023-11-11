@@ -23,4 +23,47 @@
     <string name="patterns_catalog_label">Patterns Catalog</string>
     <string name="projects_label">Projects</string>
     <string name="user_image_description">User Image</string>
+    <string name="close_button_label">close</string>
+    <string name="project_name_question">How do you want to call your new project?</string>
+    <string name="project_name_hint">Project Name</string>
+    <string name="project_type_hint">Project Type</string>
+    <string name="materials_question">Insert the materials that you will use:</string>
+    <string name="yarn_hint">Yarn</string>
+    <string name="hook_hint">Hook</string>
+    <string name="acessories_hint">Acessories</string>
+    <string name="pattern_question">Time to choose your Pattern!</string>
+    <string name="save_label">SAVE</string>
+    <string name="pattern_catalog_button_label">Choose From our Cataloghe</string>
+    <string name="upload_a_pdf_label">Upload a PDF</string>
+    <string name="user_name_placeholder">User Name</string>
+    <string name="user_email_placeholder">useremail@email.com</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="logout">Logout</string>
+    <string name="status_label">Status:</string>
+    <string name="project_image_description">Project Image</string>
+    <string name="yarn_label">YARN:</string>
+    <string name="hook_label">HOOK:</string>
+    <string name="altri_label">ALTRI:</string>
+
+    <string-array name="project_type">
+        <item>Project Type</item>
+        <item>Amigurumi</item>
+        <item>Bags and Totes</item>
+        <item>Baby Items</item>
+        <item>Clothing</item>
+        <item>Coasters and Placemats</item>
+        <item>Dolls</item>
+        <item>Granny Squares</item>
+        <item>Hats</item>
+        <item>Headbands and Hair Accessories</item>
+        <item>Jewelry</item>
+        <item>Mittens and Gloves</item>
+        <item>Pillows</item>
+        <item>Rugs and Doilies</item>
+        <item>Socks and Slippers</item>
+        <item>Tablecloths and Table Runners</item>
+        <item>Tunisian Crochet</item>
+        <item>Pet Accessories</item>
+        <item>Blankets and Afghans</item>
+    </string-array>
 </resources>

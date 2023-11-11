@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.home.projects.pages.NewProjectActivity">
+
+    <ImageButton
+        android:id="@+id/closeDialogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/close_button_label"
+        android:padding="15dp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/baseline_close_24"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/closeDialogButton"
+            android:layout_above="@id/buttonContainer">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:orientation="vertical"
+                android:divider="@drawable/divider"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/nameQuestionTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/project_name_question"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_in_pop_up"
+                    android:textSize="22sp" />
+
+                <EditText
+                    android:id="@+id/projectNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/stroke_border_shape"
+                    android:hint="@string/project_name_hint"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/projectTypeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/stroke_border_shape"
+                    android:hint="@string/project_type_hint"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/materialTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/materials_question"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_in_pop_up"
+                    android:textSize="22sp" />
+
+                <EditText
+                    android:id="@+id/yarnEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/stroke_border_shape"
+                    android:hint="@string/yarn_hint"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/hookEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/stroke_border_shape"
+                    android:hint="@string/hook_hint"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/accessoryEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/stroke_border_shape"
+                    android:hint="@string/acessories_hint"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/patternTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/pattern_question"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_in_pop_up"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <android.widget.Button
+                    android:id="@+id/catalogPatternButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/backgroundSecondary"
+                    android:text="@string/pattern_catalog_button_label"
+                    android:textColor="@color/onBackgroundSecondary"
+                    android:elevation="5dp" />
+
+                <android.widget.Button
+                    android:id="@+id/pdfPatternButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/backgroundSecondary"
+                    android:text="@string/upload_a_pdf_label"
+                    android:textColor="@color/onBackgroundSecondary"
+                    android:elevation="5dp"/>
+
+            <TextView
+                android:id="@+id/chosenPatternTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/text_in_pop_up"
+                android:layout_marginBottom="20dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    <LinearLayout
+    android:id="@+id/buttonContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_alignParentBottom="true">
+
+    <android.widget.Button
+        android:id="@+id/saveProjectButton"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@drawable/border_radius_shape"
+        android:backgroundTint="@color/backgroundSecondary"
+        android:text="@string/save_label"
+        android:textColor="@color/onBackgroundSecondary" />
+
+</LinearLayout>
+
+</RelativeLayout>

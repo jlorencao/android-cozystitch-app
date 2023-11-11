@@ -18,6 +18,10 @@
     <color name="mainButton">#B9EAFF</color>
     <color name="pageTitle">#001F29</color>
     <color name="backgroundSecondary">#FFDCC0</color>
+    <color name="onBackgroundSecondary">#4B2800</color>
     <color name="outline">#70787C</color>
+    <color name="text_in_pop_up">#7C2E0F</color>
+
+
 
 </resources>

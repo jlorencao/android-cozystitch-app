@@ -1,20 +1,16 @@
 package com.example.cozystitchapp.ui.signup
 
 import android.util.Log
-import android.view.View
 import androidx.lifecycle.ViewModel
-import com.example.cozystitchapp.R
 import com.example.cozystitchapp.model.Project
 import com.example.cozystitchapp.model.User
-import com.example.cozystitchapp.ui.signup.introduction.OnBoardingFirstPageFragment
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.firestoreSettings
 import com.google.firebase.ktx.Firebase
 
 class SignUpViewModel : ViewModel() {
+
 
     //transfer the signup logic here
 
@@ -35,11 +31,6 @@ class SignUpViewModel : ViewModel() {
                 .addOnFailureListener { e -> Log.w("SAVE_DATA_STATUS", "Error writing document", e) }
         }
 
-
-
-
     }
-
-
 
 }

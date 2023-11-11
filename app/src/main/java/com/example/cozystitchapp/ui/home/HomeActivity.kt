@@ -1,13 +1,20 @@
 package com.example.cozystitchapp.ui.home
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.cozystitchapp.R
 import com.example.cozystitchapp.databinding.ActivityHomeBinding
+import com.example.cozystitchapp.ui.home.patterns.PatternsPageFragment
+import com.example.cozystitchapp.ui.home.patterns.viewmodel.PatternsViewModel
+import com.example.cozystitchapp.ui.home.profile.ProfilePageFragment
+import com.example.cozystitchapp.ui.home.projects.pages.NewProjectActivity
+import com.example.cozystitchapp.ui.home.projects.pages.ProjectsPageFragment
 
 
 class HomeActivity : AppCompatActivity() {
@@ -24,14 +31,14 @@ class HomeActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.topBarView)
         setSupportActionBar(toolbar)
 
-
-
         //start with HomePageFragment
         openFragment(HomePageFragment())
 
 
         //handle the action button from toolbar to create a new project
         binding.topBarView.addNewProjectIcon.setOnClickListener {
+            val intent = Intent(this, NewProjectActivity::class.java)
+            startActivity(intent)
             Log.d("ACTION_BUTTON","button pressed")
         }
 
