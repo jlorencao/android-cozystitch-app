@@ -17,7 +17,7 @@
             android:id="@+id/rowTextView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:gravity="start"
             android:text="@string/patterns_catalog_label"
             android:textColor="@color/icons_cardLabels"
             android:textSize="18sp"

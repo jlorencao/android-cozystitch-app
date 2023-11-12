@@ -2,6 +2,7 @@ package com.example.cozystitchapp.ui.home
 
 
 import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -30,6 +31,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(view)
         val toolbar = findViewById<Toolbar>(R.id.topBarView)
         setSupportActionBar(toolbar)
+
 
         //start with HomePageFragment
         openFragment(HomePageFragment())

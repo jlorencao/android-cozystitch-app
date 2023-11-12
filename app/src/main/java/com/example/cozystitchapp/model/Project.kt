@@ -17,7 +17,7 @@ data class Project(
     var hook: String? = "",
     var accessory: String = ""
 ): Serializable {
-    constructor( title: String,type: String, crochetPattern: String?, status: Int, createAt: Date,imagePath: String,  yarn: String, hook: String, accessory: String ):this() {
+    constructor( title: String,type: String, crochetPattern: String, status: Int, createAt: Date,imagePath: String,  yarn: String, hook: String, accessory: String ):this() {
         this.title = title
         this.type = type
         this.crochetPattern = crochetPattern

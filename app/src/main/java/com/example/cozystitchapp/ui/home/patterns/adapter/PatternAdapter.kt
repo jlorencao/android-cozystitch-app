@@ -52,5 +52,6 @@ class PatternAdapter : RecyclerView.Adapter<PatternAdapter.MyViewHolder>(){
 
         val patternName: TextView = itemView.findViewById<TextView>(R.id.patternNameTextView)
         val patternImage: ImageView = itemView.findViewById<ImageView>(R.id.patternImageView)
+
     }
 }

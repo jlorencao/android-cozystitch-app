@@ -1,13 +1,16 @@
 package com.example.cozystitchapp.ui.home.projects.pages
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import com.example.cozystitchapp.databinding.ActivityNewProjectBinding
 import com.example.cozystitchapp.model.Project
 import com.example.cozystitchapp.ui.home.projects.viewmodel.ProjectsViewModel
+
 
 class NewProjectActivity : AppCompatActivity() {
 
@@ -25,6 +28,7 @@ class NewProjectActivity : AppCompatActivity() {
 
         setContentView(view)
 
+
         //set programmatically the height and width to MATCH PARENT so the pop up is larger
         window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.MATCH_PARENT)
@@ -34,9 +38,10 @@ class NewProjectActivity : AppCompatActivity() {
         }
 
         binding.catalogPatternButton.setOnClickListener{
-             //get a list of the patterns from the database
 
-            //show the title of the file on the textView
+            openDialog(this)
+
+
 
         }
 
@@ -53,11 +58,11 @@ class NewProjectActivity : AppCompatActivity() {
         //get the data from EditText
             val title = binding.projectNameEditText.text.toString()
             val type  = binding.projectTypeEditText.text.toString()
-            val crochetPattern = "pattern"
+            var crochetPattern = ""
             val status = 0
 
             //verify if all the fields are filled
-            if(title.isNotEmpty() && type.isNotEmpty() && crochetPattern.isNotEmpty()){
+            if(title.isNotEmpty() && type.isNotEmpty() ){
 
                 // create the project
                 val project = Project(title,type,crochetPattern,status)
@@ -72,4 +77,30 @@ class NewProjectActivity : AppCompatActivity() {
                 }
         }
     }
+    fun openDialog(context: Context){
+        // Retrieve pattern titles from SharedPreferences
+        val sharedPreferences = getSharedPreferences("patterns", Context.MODE_PRIVATE)
+        val patternTitleSet = sharedPreferences.getStringSet("patterns", null)
+        val patternTitles = patternTitleSet?.toList() ?: emptyList()
+        var patternArray = patternTitles.toTypedArray()
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+        builder
+            .setTitle("Pattern List")
+            .setPositiveButton("Save") { dialog, which ->
+                // Do something.
+            }
+            .setNegativeButton("Cancel") { dialog, which ->
+                // Do something else.
+            }
+            .setSingleChoiceItems(
+                patternArray, 0
+            ) { dialog, which ->
+                // Do something.
+            }
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
 }

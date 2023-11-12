@@ -1,10 +1,12 @@
 package com.example.cozystitchapp.ui.home.patterns
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,7 +33,7 @@ class PatternsPageFragment : Fragment() {
 
 
     private lateinit var _binding: FragmentPatternsPageBinding
-    private lateinit var viewModel: PatternsViewModel
+    private val viewModel: PatternsViewModel by viewModels()
     private lateinit var patternRecyclerView: RecyclerView
     lateinit var adapter: PatternAdapter
 
@@ -58,15 +60,16 @@ class PatternsPageFragment : Fragment() {
         adapter = PatternAdapter()
         patternRecyclerView.adapter = adapter
 
-        // Initialize ViewModel
-        viewModel = ViewModelProvider(this)[PatternsViewModel::class.java]
-
         //Fetch patterns
         viewModel.getPatterns()
 
+
         adapter.onItemCLick = {
             //DECLARE INTENT
+            val intent = Intent(requireContext(), PatternDetailsActivity::class.java)
+            intent.putExtra("Crochet Pattern", it)
             //NAVIGATE TO DETAILS PAGE
+            startActivity(intent)
         }
 
         // Inflate the layout for this fragment
