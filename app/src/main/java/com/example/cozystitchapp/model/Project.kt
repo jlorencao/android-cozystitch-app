@@ -8,16 +8,16 @@ import java.util.Date
 data class Project(
     var title: String? = "",
     var type: String? = "",
-    var crochetPattern: String? = "",
+    var crochetPattern: CrochetPattern? = null,
     var status: Int? = 0,
-    @ServerTimestamp
-    var createAt: Date? = null,
     var imagePath: String? = "",
     var yarn: String? = "",
     var hook: String? = "",
-    var accessory: String = ""
+    var accessory: String = "",
+    @ServerTimestamp
+    var createAt: Date? = null,
 ): Serializable {
-    constructor( title: String,type: String, crochetPattern: String, status: Int, createAt: Date,imagePath: String,  yarn: String, hook: String, accessory: String ):this() {
+    constructor( title: String,type: String, crochetPattern: CrochetPattern, status: Int, createAt: Date,imagePath: String,  yarn: String, hook: String, accessory: String ):this() {
         this.title = title
         this.type = type
         this.crochetPattern = crochetPattern

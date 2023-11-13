@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.cozystitchapp.databinding.FragmentProfilePageBinding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,7 +67,8 @@ class ProfilePageFragment : Fragment() {
         }
         _binding.logoutButton.setOnClickListener {
             //logout from firebase
-
+            Firebase.auth.signOut()
+            activity?.finish()
         }
 
         return view

@@ -1,14 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomePageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home Page Fragment" />
+        android:layout_height="200dp"
+        android:layout_margin="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="401dp"
+        android:elevation="20dp"
+        app:cardBackgroundColor="@color/cards_and_bars"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/CounterCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-</FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CounterCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:elevation="20dp"
+        app:cardBackgroundColor="@color/cards_and_bars"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/cardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:elevation="5dp" >
+
+            <TextView
+                android:id="@+id/counterLabelTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/counter_label"
+                android:layout_alignParentTop="true"
+                android:textSize="20sp"
+                android:paddingBottom="10dp"
+                android:gravity="center"
+                android:textColor="@color/icons_cardLabels"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:id="@+id/counterLinearLayout"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_below="@id/counterLabelTextView"
+                android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/decrementCounterButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/decrement_counter"
+                android:src="@drawable/baseline_remove_circle_outline_24" />
+
+            <TextView
+                android:id="@+id/counterTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/counter_initial_value"
+                android:textColor="@color/icons_cardLabels"
+                android:textSize="28sp" />
+
+            <ImageButton
+                android:id="@+id/incrementCounterButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/increment_counter"
+                android:src="@drawable/baseline_add_circle_outline_24" />
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/resetCounterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/reset_label"
+                android:background="@android:color/transparent"
+                android:layout_below="@id/counterLinearLayout"
+                android:src="@drawable/baseline_refresh_24"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

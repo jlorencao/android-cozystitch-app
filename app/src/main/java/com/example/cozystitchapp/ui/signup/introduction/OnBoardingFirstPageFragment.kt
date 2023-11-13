@@ -1,5 +1,6 @@
 package com.example.cozystitchapp.ui.signup.introduction
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.widget.RadioButton
 import androidx.fragment.app.viewModels
 import com.example.cozystitchapp.databinding.FragmentOnboardingFirstPageBinding
 import com.example.cozystitchapp.model.Project
+import com.example.cozystitchapp.ui.home.HomeActivity
 import com.example.cozystitchapp.ui.signup.SignUpViewModel
 
 // TODO: Rename parameter arguments, choose names that match
@@ -60,6 +62,14 @@ class OnBoardingFirstPageFragment : Fragment() {
             val country = countryEditText.text.toString()
             val crochetLevel = binding.root.findViewById<RadioButton>(selectedRadioButtonId).text.toString()
             viewModel.saveUserData(name,lastName,crochetLevel, country, projects)
+
+            viewModel.getIsSavedLiveData().observe(viewLifecycleOwner) { dataSaved ->
+                if (dataSaved != null && dataSaved) {
+                   val intent = Intent(requireContext(), HomeActivity::class.java)
+                    startActivity(intent)
+                }
+
+            }
         }
 
         // Inflate the layout for this fragment

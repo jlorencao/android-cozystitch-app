@@ -3,11 +3,13 @@ package com.example.cozystitchapp.ui.home.projects.pages
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Window
 import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.example.cozystitchapp.databinding.ActivityNewProjectBinding
+import com.example.cozystitchapp.model.CrochetPattern
 import com.example.cozystitchapp.model.Project
 import com.example.cozystitchapp.ui.home.projects.viewmodel.ProjectsViewModel
 
@@ -16,7 +18,7 @@ class NewProjectActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNewProjectBinding
     private val viewModel: ProjectsViewModel by viewModels()
-
+    private lateinit var crochetPatternName: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,13 +38,10 @@ class NewProjectActivity : AppCompatActivity() {
         binding.closeDialogButton.setOnClickListener{
             finish()
         }
-
+        crochetPatternName = ""
         binding.catalogPatternButton.setOnClickListener{
-
+            //Dialog to chose the pattern from catalog
             openDialog(this)
-
-
-
         }
 
         binding.pdfPatternButton.setOnClickListener {
@@ -54,19 +53,26 @@ class NewProjectActivity : AppCompatActivity() {
 
         }
 
+        Log.d("result_after_dialog", crochetPatternName)
+
         binding.saveProjectButton.setOnClickListener {
         //get the data from EditText
             val title = binding.projectNameEditText.text.toString()
             val type  = binding.projectTypeEditText.text.toString()
-            var crochetPattern = ""
-            val status = 0
+            val yarn = binding.yarnEditText.text.toString()
+            val hook = binding.hookEditText.text.toString()
+            val accessory = binding.accessoryEditText.text.toString()
+            val crochetPatternName = binding.chosenPatternTextView.text.toString()
 
-            //verify if all the fields are filled
+            Log.d("Save_button",crochetPatternName)
+
+
+            //verify if all the fields important fields are filled
             if(title.isNotEmpty() && type.isNotEmpty() ){
 
                 // create the project
-                val project = Project(title,type,crochetPattern,status)
-                viewModel.saveNewProject(project)
+                viewModel.saveNewProject(title, type, yarn, hook, accessory, crochetPatternName)
+
             }
         //close the window
             viewModel.getIsSavedLiveData().observe(this) { dataSaved ->
@@ -82,23 +88,27 @@ class NewProjectActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("patterns", Context.MODE_PRIVATE)
         val patternTitleSet = sharedPreferences.getStringSet("patterns", null)
         val patternTitles = patternTitleSet?.toList() ?: emptyList()
-        var patternArray = patternTitles.toTypedArray()
+        val patternArray = patternTitles.toTypedArray()
+        var patternName = ""
 
         val builder: AlertDialog.Builder = AlertDialog.Builder(context)
         builder
             .setTitle("Pattern List")
-            .setPositiveButton("Save") { dialog, which ->
-                // Do something.
-            }
-            .setNegativeButton("Cancel") { dialog, which ->
-                // Do something else.
-            }
             .setSingleChoiceItems(
                 patternArray, 0
             ) { dialog, which ->
-                // Do something.
+                patternName = patternArray[which].toString()
+                Log.d("dialog_result", patternName)
             }
-
+            .setPositiveButton("Save") { dialog, which ->
+                // Do something.
+                binding.chosenPatternTextView.text = patternName
+                Log.d("dialog_result", patternName)
+                dialog.dismiss()
+            }
+            .setNegativeButton("Cancel") { dialog, which ->
+                dialog.dismiss()
+            }
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }

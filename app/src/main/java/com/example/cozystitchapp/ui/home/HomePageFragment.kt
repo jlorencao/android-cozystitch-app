@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.cozystitchapp.R
+import com.example.cozystitchapp.databinding.FragmentHomePageBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,6 +19,9 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HomePageFragment : Fragment() {
+
+    private lateinit var binding: FragmentHomePageBinding
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,8 +38,21 @@ class HomePageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentHomePageBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        //handling the counter
+        binding.incrementCounterButton.setOnClickListener{
+            increment()
+        }
+        binding.decrementCounterButton.setOnClickListener {
+            decrement()
+        }
+        binding.resetCounterButton.setOnClickListener{
+            binding.counterTextView.text = "00"
+        }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_page, container, false)
+        return view
     }
 
     companion object {
@@ -56,5 +73,18 @@ class HomePageFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    fun increment(){
+        val value = binding.counterTextView.text.toString()
+        val valueInt = value.toInt()
+        val valueToDisplay = valueInt + 1
+        binding.counterTextView.text = valueToDisplay.toString()
+    }
+    fun decrement(){
+        val value = binding.counterTextView.text.toString()
+        val valueInt = value.toInt()
+        val valueToDisplay = valueInt - 1
+        binding.counterTextView.text = valueToDisplay.toString()
     }
 }

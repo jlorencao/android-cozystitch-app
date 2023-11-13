@@ -30,8 +30,5 @@ class StartActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.exploreAsAGuestLink.setOnClickListener{
-            //navigate to home
-        }
     }
 }

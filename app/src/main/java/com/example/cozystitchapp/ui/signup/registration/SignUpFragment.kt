@@ -74,7 +74,6 @@ class SignUpFragment : Fragment() {
         }
 
         return view
-       // return inflater.inflate(R.layout.fragment_sign_up, container, false)
 
         }
 

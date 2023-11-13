@@ -44,26 +44,17 @@
     <string name="yarn_label">YARN:</string>
     <string name="hook_label">HOOK:</string>
     <string name="altri_label">ALTRI:</string>
+    <string name="increment_counter">Increment Counter</string>
+    <string name="decrement_counter">Decrement Counter</string>
+    <string name="counter_initial_value">00</string>
+    <string name="counter_label">Counter</string>
+    <string name="reset_label">reset</string>
+    <string name="name_hint">Name</string>
+    <string name="last_name_hint">Last Name</string>
+    <string name="country_hint">Country</string>
+    <string name="beginner_label">Beginner</string>
+    <string name="intermediary_label">Intermediary</string>
+    <string name="professional_label">Professional</string>
+    <string name="pattern_image_description">Pattern Image</string>
 
-    <string-array name="project_type">
-        <item>Project Type</item>
-        <item>Amigurumi</item>
-        <item>Bags and Totes</item>
-        <item>Baby Items</item>
-        <item>Clothing</item>
-        <item>Coasters and Placemats</item>
-        <item>Dolls</item>
-        <item>Granny Squares</item>
-        <item>Hats</item>
-        <item>Headbands and Hair Accessories</item>
-        <item>Jewelry</item>
-        <item>Mittens and Gloves</item>
-        <item>Pillows</item>
-        <item>Rugs and Doilies</item>
-        <item>Socks and Slippers</item>
-        <item>Tablecloths and Table Runners</item>
-        <item>Tunisian Crochet</item>
-        <item>Pet Accessories</item>
-        <item>Blankets and Afghans</item>
-    </string-array>
 </resources>

@@ -1,6 +1,8 @@
 package com.example.cozystitchapp.ui.signup
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.cozystitchapp.model.Project
 import com.example.cozystitchapp.model.User
@@ -11,6 +13,7 @@ import com.google.firebase.ktx.Firebase
 
 class SignUpViewModel : ViewModel() {
 
+    var isSaved = MutableLiveData<Boolean>()
 
     //transfer the signup logic here
 
@@ -27,10 +30,16 @@ class SignUpViewModel : ViewModel() {
             val userData = User(name, lastname, levelCrochet, country, projects)
             db.collection("users").document(userId)
                 .set(userData, SetOptions.merge())
-                .addOnSuccessListener { Log.d("SAVE_DATA_STATUS", "DocumentSnapshot successfully written!") }
+                .addOnSuccessListener {
+                    isSaved.postValue(true)
+                    Log.d("SAVE_DATA_STATUS", "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w("SAVE_DATA_STATUS", "Error writing document", e) }
         }
 
+
     }
 
+    fun getIsSavedLiveData() : LiveData<Boolean> {
+        return isSaved
+    }
 }
